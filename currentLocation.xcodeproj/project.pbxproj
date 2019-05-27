@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8554562229BA3F000D02A41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8554561229BA3F000D02A41 /* MapKit.framework */; };
 		B8AEE35C229A506000213F47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AEE35B229A506000213F47 /* AppDelegate.swift */; };
 		B8AEE35E229A506000213F47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AEE35D229A506000213F47 /* ViewController.swift */; };
 		B8AEE361229A506000213F47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AEE35F229A506000213F47 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8554561229BA3F000D02A41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B8AEE358229A506000213F47 /* currentLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = currentLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AEE35B229A506000213F47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AEE35D229A506000213F47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8554562229BA3F000D02A41 /* MapKit.framework in Frameworks */,
 				B8AEE36F229A50A100213F47 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +74,7 @@
 		B8AEE36D229A50A100213F47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8554561229BA3F000D02A41 /* MapKit.framework */,
 				B8AEE36E229A50A100213F47 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -108,6 +112,11 @@
 				TargetAttributes = {
 					B8AEE357229A506000213F47 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
