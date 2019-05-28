@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager = CLLocationManager()
 
@@ -24,19 +24,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         print("In vewDidLoad")
         
-        locationManager.delegate = self
         
-       
-        
-       
-        locationManager.delegate=self;
+        locationManager.delegate=self
+        mapViewX1.delegate = self
         locationManager.desiredAccuracy=kCLLocationAccuracyBest;
         locationManager.distanceFilter=kCLDistanceFilterNone;
         locationManager.requestWhenInUseAuthorization();
         locationManager.startMonitoringSignificantLocationChanges();
         locationManager.startUpdatingLocation();
-        
-        
         
         
         
@@ -53,6 +48,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     {
         print("Location",locations)
     }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
+    {
+        let region = MKCoordinateRegion(center: userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0) )
+        self.mapViewX1.setRegion(region, animated: true)
+    }
+    
+   
+        
+    
 
 
 }
